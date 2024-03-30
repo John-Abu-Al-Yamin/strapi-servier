@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_works",
+  "info": {
+    "singularName": "home-work",
+    "pluralName": "home-works",
+    "displayName": "home-work",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title_home_work": {
+      "type": "string"
+    },
+    "explanation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::explanation.explanation",
+      "inversedBy": "home_works"
+    }
+  }
+}

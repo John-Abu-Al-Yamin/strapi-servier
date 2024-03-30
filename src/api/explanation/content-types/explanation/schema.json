@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "explanations",
+  "info": {
+    "singularName": "explanation",
+    "pluralName": "explanations",
+    "displayName": "explanation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_lesson": {
+      "type": "string"
+    },
+    "description_lesson": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "video": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "lesson": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lesson.lesson",
+      "inversedBy": "explanations"
+    },
+    "home_works": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::home-work.home-work",
+      "mappedBy": "explanation"
+    }
+  }
+}
